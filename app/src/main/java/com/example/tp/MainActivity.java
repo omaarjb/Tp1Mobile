@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             String res=convertFromDecimal(decimal,out);
             result.setText("Result is : " +res);
         }catch(NumberFormatException ex){
-            Toast.makeText(this,"Erreur de conversion !",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Erreur de conversion !!",Toast.LENGTH_SHORT).show();
         }
 
 
