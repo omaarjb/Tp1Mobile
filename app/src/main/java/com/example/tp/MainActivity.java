@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         input=findViewById(R.id.idInput);
         output=findViewById(R.id.idOutput);
         convertButton=findViewById(R.id.convertButton);
+        result=findViewById(R.id.resultText);
 
         String[] bases = {"Décimal", "Binaire", "Octal", "Hexadécimal"};
         ArrayAdapter<String> adapter=new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,bases);
@@ -57,10 +59,14 @@ public class MainActivity extends AppCompatActivity {
         String num=number.getText().toString();
         String in=input.getSelectedItem().toString();
         String out=output.getSelectedItem().toString();
+        try{
+            int decimal=convertToDecimal(num,in);
+            String res=convertFromDecimal(decimal,out);
+            result.setText("Result is : " +res);
+        }catch(NumberFormatException ex){
+            Toast.makeText(this,"Erreur de conversion ",Toast.LENGTH_SHORT).show();
+        }
 
-        int decimal=convertToDecimal(num,in);
-        String res=convertFromDecimal(decimal,out);
-        result.setText("Result is : " +res);
 
 
     }
