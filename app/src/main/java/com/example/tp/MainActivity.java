@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private int toDecimal(String number, String base) {
+    private int convertToDecimal(String number, String base) {
         switch (base) {
             case "Décimal":
                 return Integer.parseInt(number);
@@ -76,6 +76,21 @@ public class MainActivity extends AppCompatActivity {
                 return Integer.parseInt(number, 16);
             default:
                 return 0;
+        }
+    }
+
+    private String convertFromDecimal(int number, String base) {
+        switch (base) {
+            case "Décimal":
+                return Integer.toString(number);
+            case "Binaire":
+                return Integer.toBinaryString(number);
+            case "Octal":
+                return Integer.toOctalString(number);
+            case "Hexadécimal":
+                return Integer.toHexString(number).toUpperCase();
+            default:
+                throw new NumberFormatException("Base non supportée");
         }
     }
 }
