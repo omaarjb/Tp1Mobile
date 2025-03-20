@@ -64,4 +64,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private int toDecimal(String number, String base) {
+        switch (base) {
+            case "Décimal":
+                return Integer.parseInt(number);
+            case "Binaire":
+                return Integer.parseInt(number, 2);
+            case "Octal":
+                return Integer.parseInt(number, 8);
+            case "Hexadécimal":
+                return Integer.parseInt(number, 16);
+            default:
+                return 0;
+        }
+    }
 }
