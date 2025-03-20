@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         String in=input.getSelectedItem().toString();
         String out=output.getSelectedItem().toString();
 
+        int decimal=convertToDecimal(num,in);
+        String res=convertFromDecimal(decimal,out);
+        result.setText("Result is : " +res);
+
 
     }
 }
