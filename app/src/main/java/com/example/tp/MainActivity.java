@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             case "Hexadécimal":
                 return Integer.toHexString(number).toUpperCase();
             default:
-                throw new NumberFormatException("Base non supportée");
+                return null;
         }
     }
 }
