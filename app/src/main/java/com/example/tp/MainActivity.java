@@ -2,6 +2,7 @@ package com.example.tp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         input.setAdapter(adapter);
         output.setAdapter(adapter);
+
+        convertButton.setOnClickListener((e)->{
+            convertNumber();
+        });
+
+
+        }
+
+        public void convertNumber(){
+        String num=number.getText().toString();
+        String in=input.getSelectedItem().toString();
+        String out=output.getSelectedItem().toString();
+
 
     }
 }
